@@ -83,6 +83,8 @@ public:
 	}
 };
 
+//Demo
+
 int main() {
 	Stack <int> stack;
 	stack.push(100);
