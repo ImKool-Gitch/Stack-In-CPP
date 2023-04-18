@@ -4,7 +4,7 @@ template <typename T>
 class Stack {
 private:
 	T* stack;
-	// i is a counter for how many "stack frames" are in the stack
+	// i is a counter for how many elements are in the stack
 	unsigned i;
 public:
 	Stack() {
