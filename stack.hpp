@@ -1,6 +1,18 @@
+#if defined(IOSTREAM_H) || defined(_GLIBCXX_IOSTREAM)
+
 #ifndef STACKHPP
 
 #define STACKHPP
+
+class EmptyException {
+private:
+	std::string message;
+public:
+	EmptyException(std::string message): message(message) {}
+	void p() {
+		std::cout << message << std::endl;
+	}
+};
 
 template <typename T>
 class Stack {
@@ -78,11 +90,22 @@ public:
 			return;
 		std::cout << stack[0] << std::endl;
 	}
+	T& return_first_element() {
+		try {
+			if (i == 0) {
+				EmptyException empty("Stack is empty");
+				throw empty;
+			}
+			return stack[0];
+		}
+	}
 	bool is_empty() {
 		if (i == 0)
 			return true;
 		return false;
 	}
 };
+
+#endif
 
 #endif
