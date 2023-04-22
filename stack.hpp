@@ -90,15 +90,6 @@ public:
 			return;
 		std::cout << stack[0] << std::endl;
 	}
-	T& return_first_element() {
-		try {
-			if (i == 0) {
-				EmptyException empty("Stack is empty");
-				throw empty;
-			}
-			return stack[0];
-		}
-	}
 	bool is_empty() {
 		if (i == 0)
 			return true;
